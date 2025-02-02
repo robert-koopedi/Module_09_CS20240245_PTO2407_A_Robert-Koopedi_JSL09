@@ -13,8 +13,12 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
 
   // Fetching Bitcoin info from CoinGecko
 fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
-.then(res => res.json()
-)
+.then(res => {
+  if (!res.ok) {
+    throw new Error("Something went wrong fetching cryptocurrency data");
+  }
+  return res.json();
+})
 .then(data => {
   document.getElementById("crypto-top").innerHTML = `
     <img src="${data.image.small}" />
@@ -24,3 +28,5 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
     <p>👇: R${data.market_data.low_24h.zar}</p>
   `;
 })
+.catch(err => console.error("Error fetching cryptocurrency data:", err));
+
