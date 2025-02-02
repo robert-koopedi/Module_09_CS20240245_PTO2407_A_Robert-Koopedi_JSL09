@@ -30,3 +30,10 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
 })
 .catch(err => console.error("Error fetching cryptocurrency data:", err));
 
+// Function to update time
+function updateTime() {
+    const now = new Date();
+    document.getElementById("time").textContent = now.toLocaleTimeString([], { timeStyle: "short" });
+}
+updateTime();
+
