@@ -37,14 +37,43 @@
     font-size: 100px;
   }
 
-  div#weather > img {
-    width: 90px;
-    max-width: 100%; 
-}
-
 #author {
     padding-bottom: 20px;
     margin-bottom: 40px;
 }
-  
-  
+
+div#weather {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    align-content: flex-end;
+    align-self: flex-start;
+    text-align: right;
+    justify-content: space-around;
+    gap: 10px;
+}  
+
+div#weather { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start;
+    text-align: right;
+    align-self: end;
+    gap: 10px;
+} 
+
+
+
+div#weather img {
+    width: 50px;
+    align-self: flex-start;
+}
+
+p {
+    margin: 0px;
+    padding: 5px;
+    font-size: 1.4rem;
+    
+}
+
+

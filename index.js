@@ -63,8 +63,8 @@ navigator.geolocation.getCurrentPosition(position => {
         // Display weather info with icon
         weatherElement.innerHTML = `
         <img src="${iconUrl}" alt="Weather icon" />
-        <p>Temperature: ${temperature}°C</p>
-        <p>Description: ${weatherDescription}</p>
+        <p>${temperature}°C</p> 
+        <p>${weatherDescription}</p>
       `;
     })
     .catch(err => console.error("Error fetching weather data:", err));

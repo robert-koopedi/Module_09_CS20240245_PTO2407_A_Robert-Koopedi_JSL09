@@ -1,19 +1,28 @@
 <html>
     <head>
+        <meta charset="UTF-8" />
         <link rel="stylesheet" href="./index.css">
+        <title>Personal Dashboard</title>
     </head>
     <body>
-        <main>
+        <main>    
             <div class="top">
-                <div class="cryto">
+                <div id="crypto">
                     <div id="crypto-top"></div>
                 </div>
-                <div id="weather"></div>
+                <div id="weather">
+                    <div class="top-info">
+                      <img src="weather-icon.png" alt="Weather Icon">
+                      <p class="weather-temp"></p>
+                    </div>
+               
+                    <p class="weather-desc"> </p>
+                </div>
             </div>
-
+            
             <h1 id="time" class="time"></h1>
             <p id="author"></p>
         </main>
-        <script src="./index.js"></script>
+        <script src="./index.js" type="module"></script>
     </body>
 </html>
