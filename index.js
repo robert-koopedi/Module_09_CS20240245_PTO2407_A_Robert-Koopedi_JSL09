@@ -59,5 +59,13 @@ navigator.geolocation.getCurrentPosition(position => {
         const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 
       console.log(data)
-  })
-  });
+
+        // Display weather info with icon
+        weatherElement.innerHTML = `
+        <img src="${iconUrl}" alt="Weather icon" />
+        <p>Temperature: ${temperature}°C</p>
+        <p>Description: ${weatherDescription}</p>
+      `;
+    })
+    .catch(err => console.error("Error fetching weather data:", err));
+});
