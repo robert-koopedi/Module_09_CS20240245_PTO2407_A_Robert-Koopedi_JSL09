@@ -35,5 +35,8 @@ function updateTime() {
     const now = new Date();
     document.getElementById("time").textContent = now.toLocaleTimeString([], { timeStyle: "short" });
 }
+
+// Update time every 1 seconds
+setInterval(updateTime, 1000);
 updateTime();
 
