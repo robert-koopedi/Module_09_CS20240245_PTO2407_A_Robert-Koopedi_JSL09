@@ -40,3 +40,24 @@ function updateTime() {
 setInterval(updateTime, 1000);
 updateTime();
 
+// Fetching weather data based on geolocation
+navigator.geolocation.getCurrentPosition(position => {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+  
+    fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric`)
+      .then(res => {
+        if (!res.ok) {
+          throw new Error("Weather data not available");
+        }
+        return res.json();
+      })
+      .then(data => {
+        const weatherElement = document.getElementById("weather");
+        const temperature = data.main.temp;
+        const weatherDescription = data.weather[0].description;
+        const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+
+      console.log(data)
+  })
+  });
